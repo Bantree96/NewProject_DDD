@@ -17,12 +17,12 @@ namespace NewProject.Infratructure.IOs
 
 		}
 
-		public async void Init()
+		public void Init()
 		{
 			// 작업 Event
 
 			// init 작업
-			Task.Delay(1000);
+			Thread.Sleep(5000);
 
 		}
 

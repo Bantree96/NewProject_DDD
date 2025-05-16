@@ -16,12 +16,16 @@ namespace NewProject.UI.Windows.Splash
 		public SplashWindowViewModel(IContainerProvider container)
 		{
 			_eventAggregator = container.Resolve<IEventAggregator>();
-			_eventAggregator.GetEvent<BootstrapEvent>().Subscribe(OnServiceLoaded, ThreadOption.UIThread, false);
+			_eventAggregator.GetEvent<BootstrapEvent>().Subscribe(OnServiceLoaded);
 		}
 
 		private void OnServiceLoaded(BootstrapInfo info)
 		{
-			Message = info.Name;
+			System.Windows.Application.Current.Dispatcher.Invoke(() =>
+			{
+				// UI에 관여하는 하고싶은 작업
+				Message = info.Name;
+			});
 		}
 	}
 }

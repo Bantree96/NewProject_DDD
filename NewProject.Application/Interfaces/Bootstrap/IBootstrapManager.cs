@@ -10,6 +10,6 @@ namespace NewProject.Application.Interfaces.Bootstrap
 	{
 		void Add(IService service);
 
-		Task Init();
+		void Init();
 	}
 }

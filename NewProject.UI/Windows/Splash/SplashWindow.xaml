@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NewProject.UI.Windows.Splash"
 		xmlns:viewModel="clr-namespace:NewProject.UI.Windows.Splash"
+		xmlns:prism="http://prismlibrary.com/"
+		prism:ViewModelLocator.AutoWireViewModel="True"
 		d:DataContext="{d:DesignInstance Type=viewModel:SplashWindowViewModel}"
         mc:Ignorable="d"
         Title="SplashWindow" Height="450" Width="800">

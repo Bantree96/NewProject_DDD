@@ -66,7 +66,12 @@ namespace NewProject.Bootstrap
 			splashwindow.Show();
 
 			var bootstrapManager = Container.Resolve<IBootstrapManager>();
-			await bootstrapManager.Init();
+			var taskresult =  Task.Run(() =>
+			{
+				bootstrapManager.Init();
+			});
+
+			Task.WaitAll(taskresult);
 
 			splashwindow.Close();
 		}

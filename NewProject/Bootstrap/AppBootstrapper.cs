@@ -9,8 +9,10 @@ using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Mvvm;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace NewProject.Bootstrap
 {
@@ -25,6 +27,7 @@ namespace NewProject.Bootstrap
 			var mainWindow = Container.Resolve<MainWindow>();
 
 			Splash();
+
 			return mainWindow;
 		}
 
@@ -34,7 +37,6 @@ namespace NewProject.Bootstrap
 			containerRegistry.RegisterSingleton<IBootstrapManager, BootstrapManager>();
 
 			containerRegistry.RegisterForNavigation<MainMenuView, MainMenuViewModel>();
-
 
 			containerRegistry.RegisterDialog<SettingDialog, SettingDialogViewModel>();
 		}
@@ -60,18 +62,28 @@ namespace NewProject.Bootstrap
 		{
 			base.InitializeModules();
 		}
-		private async void Splash()
+		
+		private void Splash()
 		{
 			var splashwindow = Container.Resolve<SplashWindow>();
 			splashwindow.Show();
 
 			var bootstrapManager = Container.Resolve<IBootstrapManager>();
-			var taskresult =  Task.Run(() =>
+			var taskresult = Task.Run(() =>
 			{
 				bootstrapManager.Init();
 			});
 
-			Task.WaitAll(taskresult);
+			DispatcherFrame frame = new DispatcherFrame();
+
+			taskresult.ContinueWith(_ =>
+			{
+				// Init이 끝났을 때 메시지 루프 빠져나오게
+				frame.Continue = false;
+			}, TaskScheduler.FromCurrentSynchronizationContext()); // 반드시 UI Thread에서 실행되도록
+
+			// 메시지 루프 유지 (MainThread가 여기서 대기하면서 UI 렌더링 유지)
+			Dispatcher.PushFrame(frame);
 
 			splashwindow.Close();
 		}

@@ -15,9 +15,6 @@ namespace NewProject
 
 			var bootstrapper = new AppBootstrapper();
 			bootstrapper.Run();
-
-
-
 		}
 	}
 }

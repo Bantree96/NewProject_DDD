@@ -1,18 +1,17 @@
-﻿using NewProject.Application.Interfaces;
-using NewProject.Application.Interfaces.Bootstrap;
+﻿using NewProject.Application.Interfaces.Bootstrap;
 using NewProject.Modules;
 using NewProject.UI.Dialogs;
 using NewProject.UI.Views.MainMenu;
-using NewProject.UI.Windows.Main;
-using NewProject.UI.Windows.Splash;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Mvvm;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
+using UI.Windows.MainWindow.Views;
+using UI.Windows.SplashWindow.ViewModels;
+using UI.Windows.SplashWindow.Views;
 
 namespace NewProject.Bootstrap
 {
@@ -39,6 +38,7 @@ namespace NewProject.Bootstrap
 			containerRegistry.RegisterForNavigation<MainMenuView, MainMenuViewModel>();
 
 			containerRegistry.RegisterDialog<SettingDialog, SettingDialogViewModel>();
+
 		}
 
 		// 2 

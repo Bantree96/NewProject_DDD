@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace NewProject.UI.Windows.Main
+namespace NewProject.UI.Windows.MainWindow.ViewModels
 {
 	public class MainWindowViewModel
 	{

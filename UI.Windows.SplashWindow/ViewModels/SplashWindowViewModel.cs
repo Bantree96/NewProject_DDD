@@ -4,7 +4,7 @@ using Prism.Events;
 using Prism.Ioc;
 using Prism.Mvvm;
 
-namespace NewProject.UI.Windows.Splash
+namespace UI.Windows.SplashWindow.ViewModels
 {
 	public class SplashWindowViewModel : BindableBase
 	{

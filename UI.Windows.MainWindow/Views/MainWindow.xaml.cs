@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace NewProject.UI.Windows.Main
+namespace UI.Windows.MainWindow.Views
 {
 	/// <summary>
 	/// MainWindow.xaml에 대한 상호 작용 논리
@@ -22,6 +22,7 @@ namespace NewProject.UI.Windows.Main
 		public MainWindow()
 		{
 			InitializeComponent();
+
 		}
 	}
 }

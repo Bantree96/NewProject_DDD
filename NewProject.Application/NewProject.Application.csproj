@@ -64,7 +64,6 @@
     <Compile Include="Interfaces\ICameraManager.cs" />
     <Compile Include="Interfaces\IIOManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Logics\MainLogic.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NewProject.Domain\NewProject.Domain.csproj">

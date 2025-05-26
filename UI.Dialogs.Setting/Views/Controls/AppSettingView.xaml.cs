@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Prism.Ioc;
+using Prism.Regions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,16 +15,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace UI.Views.MainMenu.Views
+namespace UI.Dialogs.Setting.Views.Controls
 {
 	/// <summary>
-	/// MainMenuView.xaml에 대한 상호 작용 논리
+	/// AppSettingView.xaml에 대한 상호 작용 논리
 	/// </summary>
-	public partial class MainMenuView : UserControl
+	public partial class AppSettingView : UserControl
 	{
-		public MainMenuView()
+		public AppSettingView(IRegionManager rm)
 		{
 			InitializeComponent();
+
+		
+
 		}
 	}
 }

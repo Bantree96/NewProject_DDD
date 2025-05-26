@@ -22,7 +22,7 @@ namespace NewProject.Infratructure.IOs
 			// 작업 Event
 
 			// init 작업
-			Thread.Sleep(5000);
+			Thread.Sleep(1000);
 
 		}
 

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewProject.Domain.Entities.Settings
+namespace NewProject.Infratructure.Dtos.Settings
 {
-	public class AppSettings
+	public class AppSettingSaveDto
 	{
 		public string Title { get; set; }
 	}

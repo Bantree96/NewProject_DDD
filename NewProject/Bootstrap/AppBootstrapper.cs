@@ -1,4 +1,7 @@
 ﻿using NewProject.Application.Interfaces.Bootstrap;
+using NewProject.Application.Setting;
+using NewProject.Domain.Interfaces.Repository;
+using NewProject.Infratructure.Setting;
 using NewProject.Modules;
 using Prism.DryIoc;
 using Prism.Ioc;
@@ -8,10 +11,12 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 using UI.Dialogs.Setting.ViewModels;
+using UI.Dialogs.Setting.ViewModels.Controls;
 using UI.Dialogs.Setting.Views;
-using UI.Views.MainMenu.ViewModels;
-using UI.Views.MainMenu.Views;
+using UI.Dialogs.Setting.Views.Controls;
+using UI.Windows.MainWindow.ViewModels.Controls;
 using UI.Windows.MainWindow.Views;
+using UI.Windows.MainWindow.Views.Controls;
 using UI.Windows.SplashWindow.ViewModels;
 using UI.Windows.SplashWindow.Views;
 
@@ -38,8 +43,13 @@ namespace NewProject.Bootstrap
 			containerRegistry.RegisterSingleton<IBootstrapManager, BootstrapManager>();
 
 			containerRegistry.RegisterForNavigation<MainMenuView, MainMenuViewModel>();
+			containerRegistry.RegisterForNavigation<AppSettingView, AppSettingViewModel>();
+			containerRegistry.RegisterForNavigation<InspectionSettingView, InspectionSettingViewModel>();
 
 			containerRegistry.RegisterDialog<SettingDialog, SettingDialogViewModel>();
+
+			containerRegistry.Register<ISettingRepository, JsonSettingRepository>();
+			containerRegistry.Register<LoadSettingUseCase>();
 		}
 
 		// 2 

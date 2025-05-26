@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FE31AF0D-CB53-48E0-9F07-B50063881FFC}</ProjectGuid>
+    <ProjectGuid>{1A041BB8-43E1-426A-87DB-AD06BFCA1B46}</ProjectGuid>
     <OutputType>library</OutputType>
-    <RootNamespace>UI.Dialogs.Setting</RootNamespace>
-    <AssemblyName>UI.Dialogs.Setting</AssemblyName>
+    <RootNamespace>UI.Views.Settings.AppSetting</RootNamespace>
+    <AssemblyName>UI.Views.Settings.AppSetting</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -30,24 +30,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x64\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <OutputPath>bin\x64\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -76,8 +58,6 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dtos\AppSettingUIDto.cs" />
-    <Compile Include="Dtos\InspectionSettingUIDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -91,17 +71,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ViewModels\Controls\AppSettingViewModel.cs" />
-    <Compile Include="ViewModels\Controls\InspectionSettingViewModel.cs" />
-    <Compile Include="ViewModels\SettingDialogViewModel.cs" />
-    <Compile Include="Views\Controls\AppSettingView.xaml.cs">
+    <Compile Include="ViewModels\AppSettingViewModel.cs" />
+    <Compile Include="Views\AppSettingView.xaml.cs">
       <DependentUpon>AppSettingView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Controls\InspectionSettingView.xaml.cs">
-      <DependentUpon>InspectionSettingView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SettingDialog.xaml.cs">
-      <DependentUpon>SettingDialog.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -114,29 +86,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\Controls\AppSettingView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Controls\InspectionSettingView.xaml">
+    <Page Include="Views\AppSettingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\SettingDialog.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NewProject.Application\NewProject.Application.csproj">
-      <Project>{AF102FF4-C1BF-4E9A-9A3C-92BDC326D638}</Project>
-      <Name>NewProject.Application</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NewProject.Domain\NewProject.Domain.csproj">
-      <Project>{11CF8630-5719-4D7C-9C88-EC91A9D53BAD}</Project>
-      <Name>NewProject.Domain</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,13 +1,11 @@
 ﻿using NewProject.Application.Interfaces;
-using NewProject.Domain.Cores;
 using Prism.Events;
 using Prism.Ioc;
-using System;
 using System.Threading;
 
 namespace NewProject.Infratructure.Cameras
 {
-	public class CameraManager : NotifyBase, ICameraManager
+	public class CameraManager : ICameraManager
 	{
 		private IEventAggregator _eventAggregator;
 		public bool IsConnected { get; set; }
@@ -26,7 +24,7 @@ namespace NewProject.Infratructure.Cameras
 
 		public void Init()
 		{
-			Thread.Sleep(5000);
+			Thread.Sleep(1000);
 
 			IsConnected = true;
 		}

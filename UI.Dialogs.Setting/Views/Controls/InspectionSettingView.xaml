@@ -1,11 +1,12 @@
-﻿<UserControl x:Class="UI.Views.MainMenu.Views.MainMenuView"
+﻿<UserControl x:Class="UI.Dialogs.Setting.Views.Controls.InspectionSettingView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UI.Dialogs.Setting.Views.Controls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" Background="Azure">
     <Grid>
-		<Button Content="Setting" Command="{Binding ShowSettingDialogCommand}"/>
-	</Grid>
+            
+    </Grid>
 </UserControl>

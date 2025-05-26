@@ -49,6 +49,9 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Prism, Version=8.1.97.5141, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
       <HintPath>..\packages\Prism.Core.8.1.97\lib\net47\Prism.dll</HintPath>
     </Reference>
@@ -63,8 +66,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cameras\CameraManager.cs" />
+    <Compile Include="Dtos\Settings\AppSettingSaveDto.cs" />
     <Compile Include="IOs\IOManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\JsonParser.cs" />
+    <Compile Include="Services\Settings\SettingService.cs" />
+    <Compile Include="Repository\Settings\JsonSettingRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NewProject.Application\NewProject.Application.csproj">

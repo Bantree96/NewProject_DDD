@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewProject.Domain.Entities.Settings
+namespace NewProject.Application.Interfaces.Settings
 {
-	public class AppSettings
+	public interface ISettingService
 	{
-		public string Title { get; set; }
 	}
 }

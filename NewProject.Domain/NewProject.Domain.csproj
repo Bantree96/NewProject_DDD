@@ -62,10 +62,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cores\NotifyBase.cs" />
     <Compile Include="Entities\Services\BootstrapInfo.cs" />
     <Compile Include="Entities\Settings\AppSettings.cs" />
     <Compile Include="Events\Bootstrap\BootstrapEvent.cs" />
+    <Compile Include="Interfaces\Repository\ISettingRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

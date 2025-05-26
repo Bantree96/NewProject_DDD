@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewProject.Domain.Entities.Settings
+namespace UI.Dialogs.Setting.Dtos
 {
-	public class AppSettings
+	class InspectionSettingUIDto
 	{
-		public string Title { get; set; }
 	}
 }

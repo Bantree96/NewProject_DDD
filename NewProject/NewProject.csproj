@@ -144,10 +144,6 @@
       <Project>{FE31AF0D-CB53-48E0-9F07-B50063881FFC}</Project>
       <Name>UI.Dialogs.Setting</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UI.Views.MainMenu\UI.Views.MainMenu.csproj">
-      <Project>{1491939B-715E-456D-8FDB-0F20D61F6932}</Project>
-      <Name>UI.Views.MainMenu</Name>
-    </ProjectReference>
     <ProjectReference Include="..\UI.Windows.MainWindow\UI.Windows.MainWindow.csproj">
       <Project>{d5caad0b-dc40-44e6-b442-1ef2c1e0de34}</Project>
       <Name>UI.Windows.MainWindow</Name>

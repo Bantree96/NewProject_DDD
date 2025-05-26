@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CBB86A16-6AC9-4299-A951-10CE3937C615}</ProjectGuid>
+    <ProjectGuid>{1491939B-715E-456D-8FDB-0F20D61F6932}</ProjectGuid>
     <OutputType>library</OutputType>
-    <RootNamespace>NewProject.UI</RootNamespace>
-    <AssemblyName>NewProject.UI</AssemblyName>
+    <RootNamespace>UI.Views.MainMenu</RootNamespace>
+    <AssemblyName>UI.Views.MainMenu</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -76,10 +76,6 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dialogs\Settings\Views\SettingDialog.xaml.cs">
-      <DependentUpon>SettingDialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\Settings\ViewModels\SettingDialogViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -93,14 +89,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Settings\IO\IOSettingViewModel.cs" />
-    <Compile Include="Settings\IO\IOSettinView.xaml.cs">
-      <DependentUpon>IOSettinView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Views\MainMenuView.xaml.cs">
+    <Compile Include="ViewModels\MainMenuViewModel.cs" />
+    <Compile Include="Views\MainMenuView.xaml.cs">
       <DependentUpon>MainMenuView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ViewModels\MainMenuViewModel.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -112,29 +104,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NewProject.Application\NewProject.Application.csproj">
-      <Project>{AF102FF4-C1BF-4E9A-9A3C-92BDC326D638}</Project>
-      <Name>NewProject.Application</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NewProject.Domain\NewProject.Domain.csproj">
-      <Project>{11cf8630-5719-4d7c-9c88-ec91a9d53bad}</Project>
-      <Name>NewProject.Domain</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="Dialogs\Settings\Views\SettingDialog.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Views\MainMenuView.xaml">
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Settings\IO\IOSettinView.xaml">
       <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Views\MainMenuView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

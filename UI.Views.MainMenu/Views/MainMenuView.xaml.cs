@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace UI.Windows.SplashWindow.Views
+namespace UI.Views.MainMenu.Views
 {
 	/// <summary>
-	/// Window1.xaml에 대한 상호 작용 논리
+	/// MainMenuView.xaml에 대한 상호 작용 논리
 	/// </summary>
-	public partial class Window1 : Window
+	public partial class MainMenuView : UserControl
 	{
-		public Window1()
+		public MainMenuView()
 		{
 			InitializeComponent();
 		}

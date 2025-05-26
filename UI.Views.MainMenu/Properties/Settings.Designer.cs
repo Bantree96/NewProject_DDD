@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NewProject.UI.Properties
+namespace UI.Views.MainMenu.Properties
 {
     
     

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewProject.UI.Dialogs
+namespace UI.Dialogs.Setting.ViewModels
 {
 	public class SettingDialogViewModel : IDialogAware
 	{

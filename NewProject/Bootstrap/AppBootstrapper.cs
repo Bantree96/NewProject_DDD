@@ -1,7 +1,5 @@
 ﻿using NewProject.Application.Interfaces.Bootstrap;
 using NewProject.Modules;
-using NewProject.UI.Dialogs;
-using NewProject.UI.Views.MainMenu;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
@@ -9,6 +7,10 @@ using Prism.Mvvm;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
+using UI.Dialogs.Setting.ViewModels;
+using UI.Dialogs.Setting.Views;
+using UI.Views.MainMenu.ViewModels;
+using UI.Views.MainMenu.Views;
 using UI.Windows.MainWindow.Views;
 using UI.Windows.SplashWindow.ViewModels;
 using UI.Windows.SplashWindow.Views;
@@ -38,7 +40,6 @@ namespace NewProject.Bootstrap
 			containerRegistry.RegisterForNavigation<MainMenuView, MainMenuViewModel>();
 
 			containerRegistry.RegisterDialog<SettingDialog, SettingDialogViewModel>();
-
 		}
 
 		// 2 

@@ -3,9 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:controls="clr-namespace:UI.Shared.Themes.Controls;assembly=UI.Shared"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="80" d:DesignWidth="1920" Background="Black">
+
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="pack://application:,,,/UI.Shared;component/Styles/MenuButtonStyle.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	
     <Grid>
-		<Button Content="Setting" Command="{Binding ShowSettingDialogCommand}"/>
+		<StackPanel Orientation="Horizontal">
+		    <controls:IconButton Icon="pack://application:,,,/UI.Shared;component/Resources/Icons/settings.png" IconSize="50" Width="100" Content="Setting" Foreground="White" FontSize="14"  Command="{Binding ShowSettingDialogCommand}" Style="{DynamicResource MainMenuButton}"/>
+		</StackPanel>
 	</Grid>
 </UserControl>

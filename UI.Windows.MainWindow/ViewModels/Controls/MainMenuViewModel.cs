@@ -22,7 +22,7 @@ namespace UI.Windows.MainWindow.ViewModels.Controls
 		}
 		private void OnShowSettingDialogCommand()
 		{
-			_dialogService.Show("SettingDialog");
+			_dialogService.ShowDialog("SettingDialog");
 		}
 	}
 }

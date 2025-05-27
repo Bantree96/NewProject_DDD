@@ -11,5 +11,6 @@ namespace UI.Dialogs.Setting.Dtos
 	{
 		private string _title;
 		public string Title { get => _title ; set => SetProperty(ref _title, value); }
+
 	}
 }

@@ -1,10 +1,9 @@
 ﻿using NewProject.Application.Interfaces;
 using NewProject.Application.Interfaces.Bootstrap;
-using NewProject.Infratructure.Cameras;
 using Prism.Ioc;
 using Prism.Modularity;
 
-namespace NewProject.Modules
+namespace NewProject.Infratructure.Cameras.Modules
 {
 	public class CameraModule : IModule
 	{

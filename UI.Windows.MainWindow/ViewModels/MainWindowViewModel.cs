@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using UI.Shared.Constants;
 
 namespace UI.Windows.MainWindow.ViewModels
 {
@@ -18,7 +19,7 @@ namespace UI.Windows.MainWindow.ViewModels
 		{
 			_regionManager = container.Resolve<IRegionManager>();
 
-			_regionManager.RegisterViewWithRegion("MainMenuRegion", "MainMenuView");
+			_regionManager.RegisterViewWithRegion(RegionNames.MainMenuRegion, ViewNames.MainMenuView);
 		}
 	}
 }

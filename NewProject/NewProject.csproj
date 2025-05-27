@@ -97,10 +97,8 @@
     </Compile>
     <Compile Include="Bootstrap\AppBootstrapper.cs" />
     <Compile Include="Bootstrap\BootstrapManager.cs" />
-    <Compile Include="Modules\CameraModule.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modules\IOModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -9,5 +9,11 @@ namespace NewProject.Infratructure.Dtos.Settings
 	public class AppSettingSaveDto
 	{
 		public string Title { get; set; }
+
+		// Json으로 저장하기위해서 Attribute 
+
+		//
+
+		//
 	}
 }

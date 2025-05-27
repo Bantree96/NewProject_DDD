@@ -8,8 +8,13 @@
 		prism:ViewModelLocator.AutoWireViewModel="True"
 		d:DataContext="{d:DesignInstance Type=viewModel:SplashWindowViewModel}"
         mc:Ignorable="d"
-        Title="SplashWindow" Height="450" Width="800">
+        Title="SplashWindow" Height="500" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" WindowStyle="None">
     <Grid>
-		<TextBlock Text="{Binding Message}"/>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="25"/>
+		</Grid.RowDefinitions>
+		<TextBlock Grid.Row="2" Margin="10 0 0 0" Panel.ZIndex="99" Text="{Binding Message}" Background="Transparent"/>
+		<ProgressBar Grid.Row="2" HorizontalAlignment="Left" Height="Auto" Width="400" Value="{Binding ProgressValue}" Maximum="100" Minimum="0"/>
 	</Grid>
 </Window>

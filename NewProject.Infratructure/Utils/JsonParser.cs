@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewProject.Infratructure.Repository
+namespace NewProject.Infratructure.Utils
 {
 	public class JsonParser
 	{

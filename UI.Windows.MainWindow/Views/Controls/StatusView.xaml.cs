@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace UI.Windows.MainWindow.Views.Controls
 {
 	/// <summary>
-	/// MainMenuView.xaml에 대한 상호 작용 논리
+	/// StatusView.xaml에 대한 상호 작용 논리
 	/// </summary>
-	public partial class MainMenuView : UserControl
+	public partial class StatusView : UserControl
 	{
-		public MainMenuView()
+		public StatusView()
 		{
 			InitializeComponent();
 		}
-
 	}
 }

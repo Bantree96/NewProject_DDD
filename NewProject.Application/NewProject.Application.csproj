@@ -49,6 +49,9 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Prism, Version=8.1.97.5141, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Core.8.1.97\lib\net47\Prism.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -59,14 +62,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dtos\Bootstrap\BootstrapInfo.cs" />
+    <Compile Include="Events\Bootstrap\BootstrapProgressEvent.cs" />
     <Compile Include="Interfaces\Bootstrap\IBootstrapManager.cs" />
     <Compile Include="Interfaces\Bootstrap\IService.cs" />
-    <Compile Include="Interfaces\ICameraManager.cs" />
-    <Compile Include="Interfaces\IIOManager.cs" />
+    <Compile Include="Interfaces\Managers\ICameraManager.cs" />
+    <Compile Include="Interfaces\Managers\IInspectionManager.cs" />
+    <Compile Include="Interfaces\Managers\IIOManager.cs" />
     <Compile Include="Interfaces\Settings\ISettingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Setting\LoadSettingUseCase.cs" />
-    <Compile Include="Setting\SaveSettingUseCase.cs" />
+    <Compile Include="UseCasese\Setting\LoadSettingUseCase.cs" />
+    <Compile Include="UseCasese\Setting\SaveSettingUseCase.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NewProject.Domain\NewProject.Domain.csproj">
@@ -74,6 +80,11 @@
       <Name>NewProject.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="UseCasese\Inspection\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

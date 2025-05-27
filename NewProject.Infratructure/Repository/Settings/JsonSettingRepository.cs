@@ -1,15 +1,10 @@
 ﻿using NewProject.Domain.Entities.Settings;
 using NewProject.Domain.Interfaces.Repository;
 using NewProject.Infratructure.Dtos.Settings;
-using NewProject.Infratructure.Repository;
-using Newtonsoft.Json;
+using NewProject.Infratructure.Utils;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NewProject.Infratructure.Setting
 {

@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dialogs", "Dialogs", "{5B0D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.Dialogs.Setting", "UI.Dialogs.Setting\UI.Dialogs.Setting.csproj", "{FE31AF0D-CB53-48E0-9F07-B50063881FFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.Shared", "UI.Shared\UI.Shared.csproj", "{B66543EC-A9E1-477F-BFB5-01E460F81A84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,14 @@ Global
 		{FE31AF0D-CB53-48E0-9F07-B50063881FFC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FE31AF0D-CB53-48E0-9F07-B50063881FFC}.Release|x64.ActiveCfg = Release|Any CPU
 		{FE31AF0D-CB53-48E0-9F07-B50063881FFC}.Release|x64.Build.0 = Release|Any CPU
+		{B66543EC-A9E1-477F-BFB5-01E460F81A84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B66543EC-A9E1-477F-BFB5-01E460F81A84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B66543EC-A9E1-477F-BFB5-01E460F81A84}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B66543EC-A9E1-477F-BFB5-01E460F81A84}.Debug|x64.Build.0 = Debug|Any CPU
+		{B66543EC-A9E1-477F-BFB5-01E460F81A84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B66543EC-A9E1-477F-BFB5-01E460F81A84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B66543EC-A9E1-477F-BFB5-01E460F81A84}.Release|x64.ActiveCfg = Release|Any CPU
+		{B66543EC-A9E1-477F-BFB5-01E460F81A84}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,6 +107,7 @@ Global
 		{FFB495EB-8D6D-4486-A3CF-B335113547C1} = {222C12C2-0E78-4380-9741-4D0CA2F79B18}
 		{5B0D9FF2-9378-490A-A01B-D88B8E8F7E35} = {3CF01144-8E03-4989-88DD-C40DCA5DB29C}
 		{FE31AF0D-CB53-48E0-9F07-B50063881FFC} = {5B0D9FF2-9378-490A-A01B-D88B8E8F7E35}
+		{B66543EC-A9E1-477F-BFB5-01E460F81A84} = {3CF01144-8E03-4989-88DD-C40DCA5DB29C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {01BFAE5A-986E-4A52-946E-DEE6410EE0FF}

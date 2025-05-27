@@ -1,6 +1,5 @@
-﻿using NewProject.Application.Interfaces;
-using NewProject.Application.Interfaces.Bootstrap;
-using NewProject.Infratructure.IOs;
+﻿using NewProject.Application.Interfaces.Bootstrap;
+using NewProject.Application.Interfaces.Managers;
 using Prism.Ioc;
 using Prism.Modularity;
 using System;
@@ -9,20 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewProject.Modules
+namespace NewProject.Infratructure.Inspections.Modules
 {
-	public class IOModule : IModule
+	public class InspectionModule : IModule
 	{
 		public void OnInitialized(IContainerProvider containerProvider)
 		{
 			var bootstrapManager = containerProvider.Resolve<IBootstrapManager>();
-			bootstrapManager.Add(containerProvider.Resolve<IIOManager>());
+			bootstrapManager.Add(containerProvider.Resolve<IInspectionManager>());
 		}
 
 		public void RegisterTypes(IContainerRegistry containerRegistry)
 		{
-			containerRegistry.RegisterSingleton<IIOManager, IOManager>();
-
+			containerRegistry.RegisterSingleton<IInspectionManager, InspectionManager>();
 		}
+
 	}
 }

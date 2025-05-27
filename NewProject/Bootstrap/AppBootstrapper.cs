@@ -1,8 +1,10 @@
 ﻿using NewProject.Application.Interfaces.Bootstrap;
-using NewProject.Application.Setting;
+using NewProject.Application.UseCasese.Setting;
 using NewProject.Domain.Interfaces.Repository;
+using NewProject.Infratructure.Cameras.Modules;
+using NewProject.Infratructure.Inspections.Modules;
+using NewProject.Infratructure.IOs.Modules;
 using NewProject.Infratructure.Setting;
-using NewProject.Modules;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
@@ -57,6 +59,7 @@ namespace NewProject.Bootstrap
 		{
 			moduleCatalog.AddModule<CameraModule>();
 			moduleCatalog.AddModule<IOModule>();
+			moduleCatalog.AddModule<InspectionModule>();
 
 			base.ConfigureModuleCatalog(moduleCatalog);
 		}

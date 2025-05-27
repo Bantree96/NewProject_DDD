@@ -1,13 +1,10 @@
-﻿using NewProject.Application.Interfaces.Bootstrap;
-using NewProject.Domain.Entities.Services;
-using NewProject.Domain.Events.Bootstrap;
+﻿using NewProject.Application.Entities.Services;
+using NewProject.Application.Events.Bootstrap;
+using NewProject.Application.Interfaces.Bootstrap;
 using Prism.Events;
 using Prism.Ioc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NewProject.Bootstrap
 {
@@ -32,17 +29,17 @@ namespace NewProject.Bootstrap
 		{
 			foreach(var service in Services)
 			{
-				double value = CalcBootstrapCount(Services.Count);
-				_eventAggregator.GetEvent<BootstrapEvent>().Publish(new BootstrapInfo(service.Key,value));
+				int value = CalcBootstrapCount(Services.Count);
+				_eventAggregator.GetEvent<BootstrapProgressEvent>().Publish(new BootstrapInfo(service.Key,value));
 				service.Value.Init();
 			}
 		}
 
 
-		private double CalcBootstrapCount(int maxCount)
+		private int CalcBootstrapCount(int moduleCounts)
 		{
-			if (_count == 0 || maxCount == 0) throw new DivideByZeroException();
-			double value = _count / maxCount;
+			if (_count == 0 || moduleCounts == 0) throw new DivideByZeroException();
+			int value = (int)((_count / (double)moduleCounts) * 100);
 			_count++;
 
 			return value;

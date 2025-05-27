@@ -1,9 +1,8 @@
-﻿using NewProject.Application.Setting;
+﻿using NewProject.Application.UseCasese.Setting;
 using NewProject.Domain.Entities.Settings;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
-using System;
 using System.Windows.Input;
 using UI.Dialogs.Setting.Dtos;
 
@@ -19,8 +18,6 @@ namespace UI.Dialogs.Setting.ViewModels.Controls
 		public AppSettingUIDto AppSettingUIDto { get => _appSettingUIDto; set => SetProperty(ref _appSettingUIDto, value); }
 		public ICommand SaveCommand => new DelegateCommand(OnSave);
 
-		
-
 		public AppSettingViewModel(LoadSettingUseCase loadSettingUseCase, SaveSettingUseCase saveSettingUseCase)
 		{
 			_loadSettingUseCase = loadSettingUseCase;
@@ -29,18 +26,12 @@ namespace UI.Dialogs.Setting.ViewModels.Controls
 			Load();
 		}
 
-		private void Load()
-		{
-			var dto = _loadSettingUseCase.Execute();
-			AppSettingUIDto = new AppSettingUIDto
-			{
-				Title = dto.Title
-			};
-		}
+		
 		private void OnSave()
 		{
 			Save();
 		}
+
 
 		private void Save()
 		{
@@ -51,7 +42,14 @@ namespace UI.Dialogs.Setting.ViewModels.Controls
 
 			_saveSettingUseCase.Execute(entity);
 		}
-
+		private void Load()
+		{
+			var dto = _loadSettingUseCase.Execute();
+			AppSettingUIDto = new AppSettingUIDto
+			{
+				Title = dto.Title
+			};
+		}
 
 		public void OnNavigatedTo(NavigationContext navigationContext)
 		{

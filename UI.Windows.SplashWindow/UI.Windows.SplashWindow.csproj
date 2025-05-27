@@ -110,6 +110,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NewProject.Application\NewProject.Application.csproj">
+      <Project>{AF102FF4-C1BF-4E9A-9A3C-92BDC326D638}</Project>
+      <Name>NewProject.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NewProject.Domain\NewProject.Domain.csproj">
       <Project>{11CF8630-5719-4D7C-9C88-EC91A9D53BAD}</Project>
       <Name>NewProject.Domain</Name>

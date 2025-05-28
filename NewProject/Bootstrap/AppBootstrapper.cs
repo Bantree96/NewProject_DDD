@@ -1,4 +1,5 @@
-﻿using NewProject.Application.Interfaces.Bootstrap;
+﻿using CvsSIService.Logger.Services;
+using NewProject.Application.Interfaces.Bootstrap;
 using NewProject.Application.UseCasese.Setting;
 using NewProject.Domain.Interfaces.Repository;
 using NewProject.Infratructure.Cameras.Modules;
@@ -52,6 +53,7 @@ namespace NewProject.Bootstrap
 
 			containerRegistry.Register<ISettingRepository, JsonSettingRepository>();
 			containerRegistry.Register<LoadSettingUseCase>();
+
 		}
 
 		// 2 

@@ -6,25 +6,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewProject.Application.UseCasese.Setting
+namespace NewProject.Application.UseCases.Setting
 {
-	public class LoadSettingUseCase
+	public class SaveSettingUseCase
 	{
 		private readonly ISettingRepository _settingRepository;
 
-		public LoadSettingUseCase(ISettingRepository sr)
+		public SaveSettingUseCase(ISettingRepository sr)
 		{
 			_settingRepository = sr;
-
 		}
 
-		public AppSettings Execute()
+		public void Execute(AppSettings entity)
 		{
-			var entity = _settingRepository.Load();
-			return new AppSettings
-			{
-				Title = entity.Title
-			};
+			_settingRepository.Save(entity);
 		}
 	}
 }

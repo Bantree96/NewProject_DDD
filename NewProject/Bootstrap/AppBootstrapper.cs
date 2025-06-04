@@ -1,6 +1,6 @@
 ﻿using CvsSIService.Logger.Services;
 using NewProject.Application.Interfaces.Bootstrap;
-using NewProject.Application.UseCasese.Setting;
+using NewProject.Application.UseCases.Setting;
 using NewProject.Domain.Interfaces.Repository;
 using NewProject.Infratructure.Cameras.Modules;
 using NewProject.Infratructure.Inspections.Modules;

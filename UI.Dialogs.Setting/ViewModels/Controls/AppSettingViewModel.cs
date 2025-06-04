@@ -1,4 +1,4 @@
-﻿using NewProject.Application.UseCasese.Setting;
+﻿using NewProject.Application.UseCases.Setting;
 using NewProject.Domain.Entities.Settings;
 using Prism.Commands;
 using Prism.Mvvm;

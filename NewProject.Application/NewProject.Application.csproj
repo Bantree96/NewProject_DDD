@@ -72,8 +72,8 @@
     <Compile Include="Interfaces\Managers\IIOManager.cs" />
     <Compile Include="Interfaces\Settings\ISettingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UseCasese\Setting\LoadSettingUseCase.cs" />
-    <Compile Include="UseCasese\Setting\SaveSettingUseCase.cs" />
+    <Compile Include="UseCases\Setting\LoadSettingUseCase.cs" />
+    <Compile Include="UseCases\Setting\SaveSettingUseCase.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NewProject.Domain\NewProject.Domain.csproj">
@@ -82,7 +82,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="UseCasese\Inspection\" />
+    <Folder Include="UseCases\Inspection\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -17,36 +17,21 @@ namespace NewProject.Infratructure.Setting
 			//_filePath = Path.Combine(_directoryPath, "AppSetting.Json");
 		}
 
-		public T Load<T>() where T : class, new()
-		{
-			return JsonParser.Load<T>(_directoryPath);
-		}
+                public T Load<T>() where T : class, new()
+                {
+                        return JsonParser.Load<T>(_directoryPath);
+                }
 
-		public Settings LoadAll()
-		{
-			var settings = new Settings();
+                public Settings LoadAll()
+                {
+                        var settings = new Settings
+                        {
+                                AppSetting = Load<AppSetting>(),
+                                InspectionSetting = Load<InspectionSetting>()
+                        };
 
-			var properties = typeof(Settings).GetProperties();
-
-			foreach(var prop in properties)
-			{ 
-				var type = prop.PropertyType;
-				var fileName = $"{type.Name}.json";
-				var filePath = Path.Combine(_directoryPath, fileName);
-
-				var method = typeof(JsonParser).GetMethod("Load").MakeGenericMethod(type);
-				var value = method.Invoke(null,new object[] { filePath });
-
-				if (value == null)
-				{
-					value = Activator.CreateInstance(type);
-				}
-
-				prop.SetValue(settings, value);
-			}
-
-			return settings;
-		}
+                        return settings;
+                }
 
 		public void Save<T>(T setting)
 		{

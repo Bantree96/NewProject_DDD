@@ -9,5 +9,7 @@ namespace UI.Shared.Constants
 	public static class ViewNames
 	{
 		public static string MainMenuView = "MainMenuView";
+		public static string ControlBarView = "ControlBarView";
+		public static string InspectBarView = "InspectBarView";
 	}
 }

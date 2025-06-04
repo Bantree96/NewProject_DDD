@@ -4,15 +4,24 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 xmlns:vm="clr-namespace:UI.Dialogs.Setting.ViewModels.Controls"
+			 xmlns:controls="clr-namespace:UI.Shared.Themes.Controls.SettingItem;assembly=UI.Shared"
 			 d:DataContext="{d:DesignInstance Type=vm:AppSettingViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="Aqua">
     <Grid>
+
 		<Grid.RowDefinitions>
 			<RowDefinition Height="*"/>
 			<RowDefinition Height="30"/>
 		</Grid.RowDefinitions>
-		<TextBox Text="{Binding AppSettingUIDto.Title}"/>
+
+		<ScrollViewer Grid.Row="0">
+			<controls:SettingItem Title="Title" Value="{Binding AppSettingUIDto.Title, Mode=TwoWay}"/>
+			<!--<Grid>
+				<TextBox Text="{Binding AppSettingUIDto.Title}" TextWrapping="Wrap" AcceptsReturn="True" />
+			</Grid>-->
+		</ScrollViewer>
+
 		<Button Grid.Row="1" Content="Save" Command="{Binding SaveCommand}"/>
 	</Grid>
 </UserControl>

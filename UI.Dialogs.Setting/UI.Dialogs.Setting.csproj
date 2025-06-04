@@ -137,6 +137,10 @@
       <Project>{11CF8630-5719-4D7C-9C88-EC91A9D53BAD}</Project>
       <Name>NewProject.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UI.Shared\UI.Shared.csproj">
+      <Project>{b66543ec-a9e1-477f-bfb5-01e460f81a84}</Project>
+      <Name>UI.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

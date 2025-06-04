@@ -77,6 +77,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dtos\MainWindowUIDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -90,14 +91,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ViewModels\Controls\ControlBarViewModel.cs" />
+    <Compile Include="ViewModels\Controls\InspectBarViewModel.cs" />
     <Compile Include="ViewModels\Controls\MainMenuViewModel.cs" />
-    <Compile Include="ViewModels\Controls\StatusViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Views\Controls\ControlBarView.xaml.cs">
+      <DependentUpon>ControlBarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\InspectBarView.xaml.cs">
+      <DependentUpon>InspectBarView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Controls\MainMenuView.xaml.cs">
       <DependentUpon>MainMenuView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Controls\StatusView.xaml.cs">
-      <DependentUpon>StatusView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -113,13 +118,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\Controls\ControlBarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\InspectBarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Controls\MainMenuView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Controls\StatusView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -127,6 +136,14 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NewProject.Application\NewProject.Application.csproj">
+      <Project>{AF102FF4-C1BF-4E9A-9A3C-92BDC326D638}</Project>
+      <Name>NewProject.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NewProject.Domain\NewProject.Domain.csproj">
+      <Project>{11cf8630-5719-4d7c-9c88-ec91a9d53bad}</Project>
+      <Name>NewProject.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UI.Shared\UI.Shared.csproj">
       <Project>{B66543EC-A9E1-477F-BFB5-01E460F81A84}</Project>
       <Name>UI.Shared</Name>

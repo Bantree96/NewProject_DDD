@@ -23,7 +23,7 @@ namespace UI.Dialogs.Setting.ViewModels.Controls
 			_loadSettingUseCase = loadSettingUseCase;
 			_saveSettingUseCase = saveSettingUseCase;
 
-			Load();
+			 Load();
 		}
 
 		
@@ -35,7 +35,7 @@ namespace UI.Dialogs.Setting.ViewModels.Controls
 
 		private void Save()
 		{
-			var entity = new AppSettings
+			var entity = new AppSetting
 			{
 				Title = AppSettingUIDto.Title
 			};

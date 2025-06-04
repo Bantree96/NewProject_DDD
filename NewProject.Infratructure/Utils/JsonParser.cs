@@ -39,8 +39,10 @@ namespace NewProject.Infratructure.Utils
 		/// <typeparam name="T"></typeparam>
 		/// <param name="fileFullPath"></param>
 		/// <returns></returns>
-		public static T Load<T>(string fileFullPath) where T : class, new()
+		public static T Load<T>(string directoryPath) where T : class, new()
 		{
+			string fileFullPath = $"{directoryPath}/{nameof(T)}.json";
+
 			if (File.Exists(fileFullPath))
 			{
 				string jsonData;

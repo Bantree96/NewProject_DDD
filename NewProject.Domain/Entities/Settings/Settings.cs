@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace NewProject.Domain.Entities.Settings
 {
-	public class AppSetting
+	public class Settings
 	{
-		public string Title { get; set; }
+		public AppSetting AppSetting { get; set; }
+		public InspectionSetting InspectionSetting { get; set; }
+
+
 	}
 }

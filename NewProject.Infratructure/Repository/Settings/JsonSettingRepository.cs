@@ -10,28 +10,65 @@ namespace NewProject.Infratructure.Setting
 {
 	public class JsonSettingRepository : ISettingRepository
 	{
-		private readonly string _filePath;
-		private readonly string _directoryPath;
+		private readonly string _directoryPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), Assembly.GetEntryAssembly().GetName().Name);
 
 		public JsonSettingRepository()
 		{
-			_directoryPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),Assembly.GetEntryAssembly().GetName().Name);
-			_filePath = Path.Combine(_directoryPath, "AppSetting.Json");
+			//_filePath = Path.Combine(_directoryPath, "AppSetting.Json");
 		}
 
-		public AppSettings Load()
+		public T Load<T>() where T : class, new()
 		{
-			return JsonParser.Load<AppSettings>(_filePath);
+			return JsonParser.Load<T>(_directoryPath);
 		}
 
-		public void Save(AppSettings entity)
+		public Settings LoadAll()
 		{
-			var model = new AppSettingSaveDto()
+			var settings = new Settings();
+
+			var properties = typeof(Settings).GetProperties();
+
+			foreach(var prop in properties)
+			{ 
+				var type = prop.PropertyType;
+				var fileName = $"{type.Name}.json";
+				var filePath = Path.Combine(_directoryPath, fileName);
+
+				var method = typeof(JsonParser).GetMethod("Load").MakeGenericMethod(type);
+				var value = method.Invoke(null,new object[] { filePath });
+
+				if (value == null)
+				{
+					value = Activator.CreateInstance(type);
+				}
+
+				prop.SetValue(settings, value);
+			}
+
+			return settings;
+		}
+
+		public void Save<T>(T setting)
+		{
+			
+			//var model = new AppSettingSaveDto()
+			//{
+			//	Title = entity.Title
+			//};
+
+			//JsonParser.Save(model, _directoryPath, _filePath);
+		}
+
+		public void SaveAll(Settings settings)
+		{
+			var properties = typeof(Settings).GetProperties();
+
+			foreach (var prop in properties)
 			{
-				Title = entity.Title
-			};
+				var domainObj = prop.GetValue(settings);
+				if (domainObj == null) continue;
 
-			JsonParser.Save(model, _directoryPath, _filePath);
+			}
 		}
 	}
 }

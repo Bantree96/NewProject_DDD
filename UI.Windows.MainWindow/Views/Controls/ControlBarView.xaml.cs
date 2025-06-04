@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace UI.Windows.MainWindow.Views.Controls
 {
 	/// <summary>
-	/// StatusView.xaml에 대한 상호 작용 논리
+	/// ControlBarView.xaml에 대한 상호 작용 논리
 	/// </summary>
-	public partial class StatusView : UserControl
+	public partial class ControlBarView : UserControl
 	{
-		public StatusView()
+		public ControlBarView()
 		{
 			InitializeComponent();
 		}

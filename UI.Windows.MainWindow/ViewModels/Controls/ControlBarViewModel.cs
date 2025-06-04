@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewProject.Domain.Entities.Settings
+namespace UI.Windows.MainWindow.ViewModels.Controls
 {
-	public class AppSetting
+	public class ControlBarViewModel
 	{
-		public string Title { get; set; }
 	}
 }

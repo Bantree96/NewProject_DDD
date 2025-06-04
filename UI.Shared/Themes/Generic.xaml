@@ -4,6 +4,7 @@
 
 	<ResourceDictionary.MergedDictionaries>
 		<ResourceDictionary Source="pack://application:,,,/UI.Shared;component/Themes/Controls/IconButton.xaml" />
+		<ResourceDictionary Source="pack://application:,,,/UI.Shared;component/Themes/Controls/SettingItem/SettingItem.xaml" />
 	</ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

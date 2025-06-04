@@ -9,8 +9,11 @@ namespace NewProject.Domain.Interfaces.Repository
 {
 	public interface ISettingRepository
 	{
-		AppSettings Load();
+		Settings LoadAll();
+		T Load<T>() where T : class, new();
 
-		void Save(AppSettings entity);
+		void SaveAll(Settings settings);
+		void Save<T>(T settings);
+
 	}
 }

@@ -18,12 +18,12 @@ namespace NewProject.Application.UseCasese.Setting
 
 		}
 
-		public AppSettings Execute()
+		public AppSetting Execute()
 		{
-			var entity = _settingRepository.Load();
-			return new AppSettings
+			var entity = _settingRepository.LoadAll();
+			return new AppSetting
 			{
-				Title = entity.Title
+				Title = entity.AppSetting.Title
 			};
 		}
 	}

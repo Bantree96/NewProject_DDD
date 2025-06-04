@@ -46,6 +46,9 @@ namespace NewProject.Bootstrap
 			containerRegistry.RegisterSingleton<IBootstrapManager, BootstrapManager>();
 
 			containerRegistry.RegisterForNavigation<MainMenuView, MainMenuViewModel>();
+			containerRegistry.RegisterForNavigation<ControlBarView, ControlBarViewModel>();
+			containerRegistry.RegisterForNavigation<InspectBarView, InspectBarViewModel>();
+
 			containerRegistry.RegisterForNavigation<AppSettingView, AppSettingViewModel>();
 			containerRegistry.RegisterForNavigation<InspectionSettingView, InspectionSettingViewModel>();
 

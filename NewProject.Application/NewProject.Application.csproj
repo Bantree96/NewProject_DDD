@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Dtos\Bootstrap\BootstrapInfo.cs" />
     <Compile Include="Events\Bootstrap\BootstrapProgressEvent.cs" />
+    <Compile Include="Events\Setting\AppSettingSavedEvent.cs" />
     <Compile Include="Interfaces\Bootstrap\IBootstrapManager.cs" />
     <Compile Include="Interfaces\Bootstrap\IService.cs" />
     <Compile Include="Interfaces\Managers\ICameraManager.cs" />

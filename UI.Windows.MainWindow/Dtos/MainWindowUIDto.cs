@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewProject.Domain.Entities.Settings
+namespace UI.Windows.MainWindow.Dtos
 {
-	public class AppSetting
+	public class MainWindowUIDto
 	{
 		public string Title { get; set; }
 	}

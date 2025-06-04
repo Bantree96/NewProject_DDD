@@ -61,6 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Settings\AppSettings.cs" />
+    <Compile Include="Entities\Settings\InspectionSetting.cs" />
+    <Compile Include="Entities\Settings\Settings.cs" />
     <Compile Include="Interfaces\Repository\ISettingRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

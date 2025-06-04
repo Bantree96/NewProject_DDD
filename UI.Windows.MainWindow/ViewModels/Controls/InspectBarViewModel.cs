@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UI.Windows.MainWindow.ViewModels.Controls
 {
-	public class StatusViewModel
+	public class InspectBarViewModel
 	{
 	}
 }

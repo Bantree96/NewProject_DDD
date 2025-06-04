@@ -15,7 +15,7 @@ namespace UI.Dialogs.Setting.ViewModels
 	public class SettingDialogViewModel : IDialogAware
 	{
 		private IRegionManager _regionManager;
-		public AppSettings AppSettings { get; set; }
+		public AppSetting AppSettings { get; set; }
 
 		public ICommand AppSettingCommand => new DelegateCommand(OnShowAppSettingView);
 		public ICommand InspectionSettingCommand => new DelegateCommand(OnShowInspectionSettingView);
@@ -48,7 +48,7 @@ namespace UI.Dialogs.Setting.ViewModels
 		public void OnDialogOpened(IDialogParameters parameters) 
 		{
 			// TODO : App Setting Init
-			_regionManager.RegisterViewWithRegion("SettingRegion", "AppSettingView");
+			_regionManager.RequestNavigate("SettingRegion", "AppSettingView");
 
 		}
 

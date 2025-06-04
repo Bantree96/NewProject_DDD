@@ -17,19 +17,19 @@
 		</Grid.RowDefinitions>
 
 		<Grid Grid.Row="0">
-			
+			<TextBlock Text="{Binding MainWindowUIDto.Title}"/>
 		</Grid>
 
 		<Grid Grid.Row="1">
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition/>
-				<ColumnDefinition/>
-				<ColumnDefinition/>
+				<ColumnDefinition Width="4*"/>
+				<ColumnDefinition Width="4*"/>
+				<ColumnDefinition Width="2*"/>
 			</Grid.ColumnDefinitions>
 
 			<ContentControl Grid.Column="0" prism:RegionManager.RegionName="{x:Static regions:RegionNames.MainMenuRegion}"/>
-			<!--<ContentControl Grid.Column="1" prism:RegionManager.RegionName="MainMenuRegion"/>-->
-			<!--<ContentControl Grid.Column="2" prism:RegionManager.RegionName="MainMenuRegion"/>-->
+			<ContentControl Grid.Column="1" prism:RegionManager.RegionName="{x:Static regions:RegionNames.ControlBarRegion}"/>
+			<ContentControl Grid.Column="2" prism:RegionManager.RegionName="{x:Static regions:RegionNames.InspectBarRegion}"/>
 			
 		</Grid>
 	</Grid>

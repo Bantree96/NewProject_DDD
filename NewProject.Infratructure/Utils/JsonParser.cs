@@ -39,25 +39,32 @@ namespace NewProject.Infratructure.Utils
 		/// <typeparam name="T"></typeparam>
 		/// <param name="fileFullPath"></param>
 		/// <returns></returns>
-		public static T Load<T>(string directoryPath) where T : class, new()
-		{
-			string fileFullPath = $"{directoryPath}/{nameof(T)}.json";
+                public static T Load<T>(string directoryPath) where T : class, new()
+                {
+                        string fileFullPath = $"{directoryPath}/{nameof(T)}.json";
 
-			if (File.Exists(fileFullPath))
-			{
-				string jsonData;
-				using (StreamReader sr = new StreamReader(fileFullPath))
-				{
-					jsonData = sr.ReadToEnd();
-				}
+                        if (File.Exists(fileFullPath))
+                        {
+                                string jsonData;
+                                using (StreamReader sr = new StreamReader(fileFullPath))
+                                {
+                                        jsonData = sr.ReadToEnd();
+                                }
 
-				return JsonConvert.DeserializeObject<T>(jsonData);
-			}
-			else
-			{
-				return new T();
-			}
-		}
+                                return JsonConvert.DeserializeObject<T>(jsonData);
+                        }
+                        else
+                        {
+                                if (!Directory.Exists(directoryPath))
+                                {
+                                        Directory.CreateDirectory(directoryPath);
+                                }
+
+                                var instance = new T();
+                                Save(instance, directoryPath, fileFullPath);
+                                return instance;
+                        }
+                }
 
 		public static T DeepCopy<T>(object json)
 		{
